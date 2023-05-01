@@ -1,4 +1,4 @@
-title: python project sitename
-description: Enter Python 🐍 project description here
+title: py_tenma_app
+description: python 🐍 flask application for tenma power supply
 show_downloads: true
 theme: jekyll-theme-hacker

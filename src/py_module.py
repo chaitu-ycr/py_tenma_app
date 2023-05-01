@@ -1,11 +1,11 @@
-"""Enter Python 🐍 package description here"""
+"""python 🐍 flask application for tenma power supply."""
 
 __version__ = "0.0.1"
 
 # Import Python Libraries here
 
 
-class YourClass:
+class TenmaPs:
     r"""Replace with YourClass description.
     """
 
@@ -17,4 +17,4 @@ class YourClass:
 
 
 if __name__ == '__main__':
-    app_obj = YourClass()
+    app_obj = TenmaPs()
