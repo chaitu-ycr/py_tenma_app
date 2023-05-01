@@ -4,3 +4,4 @@ flit
 mkdocs
 mkdocstrings
 mkdocs-material
+flask
