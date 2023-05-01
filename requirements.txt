@@ -1,0 +1,6 @@
+pylint
+pytest
+flit
+mkdocs
+mkdocstrings
+mkdocs-material
