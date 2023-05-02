@@ -3,16 +3,30 @@
 __version__ = "0.0.1"
 
 # Import Python Libraries here
-from flask import Flask
+import random
+from flask import Flask, render_template
+from flask import jsonify
 from socket import getfqdn
-from datetime import datetime
+from templates import base_content
 
 app = Flask(__name__)
 
 @app.route("/", methods=["GET"])
 def home():
-    return f"""<meta http-equiv="refresh" content="1"/>
-    Hello World!<br>The current time is {format(datetime.strftime(datetime.now(), "%d %B %Y %X"))}."""
+    return render_template('index.html')
+
+@app.route("/get_info", methods=["GET", "POST"])
+def get_info():
+    power_supply_info = {
+        'make': 'tenma power supply',
+        'com_port': 'COM4',
+        'state': 'ON/OFF',
+        'set_voltage': random.randint(0, 30),
+        'set_current': random.randint(0, 5),
+        'live_voltage': random.randint(0, 30),
+        'live_current': random.randint(0, 5)
+    }
+    return jsonify(power_supply_info)
 
 
 if __name__ == '__main__':
