@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block body %}
+  <div class="alert alert-info" id="ps_data"></div>
+  <script>
+    var idList = ["make", "com_port", "state", "set_voltage", "set_current", "live_voltage", "live_current"];
+    var inner_ps_data = "";
+    var url = '{{ url_for("get_live_info") }}';
+    for (let i in idList) {
+      inner_ps_data = inner_ps_data + '<h3 id="' + idList[i] + '" style="color:Blue;"></h3>';
+    }
+    document.getElementById("ps_data").innerHTML = inner_ps_data;
+    function updateId(idName, value) {
+      document.getElementById(idName).innerHTML = idName + ": " + value;
+    }
+    for (let i in idList) {
+      updateId(idList[i]);
+    }
+    function fetchData() {
+      fetch(url)
+        .then(function (response) {
+          return response.json();
+        })
+        .then(function (data) {
+          for (let i in idList) {
+            updateId(idList[i], data[idList[i]]);
+          }
+        })
+        .catch(function (err) {
+          console.log('error: ' + err);
+        });
+    }
+    fetchData();
+  </script>
+{% endblock body %}

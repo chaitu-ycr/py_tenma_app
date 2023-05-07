@@ -12,10 +12,18 @@ app = Flask(__name__)
 
 @app.route("/", methods=["GET"])
 def home():
-    return render_template('index.html')
+    return render_template('home.html')
 
-@app.route("/get_info", methods=["GET", "POST"])
-def get_info():
+@app.route("/live_ps_info", methods=["GET"])
+def live_ps_info():
+    return render_template('live_ps_info.html')
+
+@app.route("/control_ps", methods=["GET"])
+def control_ps():
+    return render_template('control_ps.html')
+
+@app.route("/get_live_info", methods=["GET", "POST"])
+def get_live_info():
     power_supply_info = {
         'make': 'tenma power supply',
         'com_port': 'COM4',
