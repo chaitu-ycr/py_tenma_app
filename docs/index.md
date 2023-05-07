@@ -18,3 +18,13 @@ execute below script for creating virtual environment and installing dependencie
 ```cmd
 .\scripts\install_dependencies.bat
 ```
+
+## Start App
+
+execute below script to start python flask application
+
+```cmd
+.\scripts\run_app.bat
+```
+
+### open running application in browser using the url displayed in "run_app.bat"
