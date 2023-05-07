@@ -1,3 +1,2 @@
 base_content = '''
-
 '''

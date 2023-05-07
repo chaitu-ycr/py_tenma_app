@@ -1,13 +1,12 @@
 """python 🐍 flask application for tenma power supply."""
 
-__version__ = "0.0.1"
+__version__ = "0.0.2"
 
 # Import Python Libraries here
 import random
 from flask import Flask, render_template
 from flask import jsonify
 from socket import getfqdn
-from templates import base_content
 
 app = Flask(__name__)
 
